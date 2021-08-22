@@ -43,18 +43,18 @@ h5 {
   color: $CB;
   text-transform: uppercase;
   position: relative;
-  &::after{
-    position:absolute;
+  &::after {
+    position: absolute;
     bottom: -1px;
     left: 0%;
-    content: '';
+    content: "";
     width: 25%;
     background-color: $CO;
     height: 2px;
   }
   @media screen and (max-width: 991px) {
     text-align: center;
-    &::after{
+    &::after {
       width: 100%;
     }
   }
@@ -63,32 +63,43 @@ h5 {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 50px;
-  border-bottom: 1px solid  $BC;
+  border-bottom: 1px solid $BC;
   width: 100%;
   color: $CB;
   text-align: right;
   text-transform: uppercase;
   position: relative;
-  &::after{
-    position:absolute;
-    bottom:-1px;
+  &::after {
+    position: absolute;
+    bottom: -1px;
     right: 0%;
-    content: '';
+    content: "";
     width: 28%;
     background-color: $CO;
     height: 2px;
   }
   @media screen and (max-width: 991px) {
     text-align: center;
-    &::after{
+    &::after {
       width: 100%;
-    
     }
   }
 }
 //marbot
 .marbot20 {
   margin-bottom: 20px;
+}
+
+//bacground navbar
+.nav-bg {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: white;
+  z-index: 999;
+  padding: 6px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 // body
@@ -102,6 +113,10 @@ body {
   -webkit-overflow-scrolling: touch;
   -webkit-font-smoothing: antialiased;
   transition: 0.3s all ease-in-out;
+}
+//html
+html{
+  scroll-behavior: smooth;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -126,7 +141,6 @@ body {
     width: 100%;
     border-bottom: 1px solid $BC;
     text-align: center;
-    position: inherit;
     height: auto;
     #top-bar.closed {
       height: 0;
@@ -317,6 +331,7 @@ body {
       //   width: 100%;
       //   background: rgba(8, 44, 70, 0.9);
       // }
+
       .carousel-caption {
         display: none !important;
         position: absolute;
@@ -400,7 +415,6 @@ body {
   }
 }
 
-
 //services
 .service {
   margin: 80px 0;
@@ -445,20 +459,20 @@ body {
 
 //testimonial
 .testimonial {
-  margin: 80px 0 ;
+  margin: 80px 0;
   overflow: hidden;
   .testimonial-section {
     background-color: #ffffff;
   }
   .testi-img .img-box {
-    max-width: 360px;
+    max-width: 300px;
     margin: auto;
     text-align: center;
     position: relative;
   }
   .testi-img .circle {
-    height: 360px;
-    width: 360px;
+    height: 300px;
+    width: 300px;
     background-color: #fb9c9a;
     position: absolute;
     border-radius: 50%;
@@ -470,13 +484,12 @@ body {
     position: relative;
     border-radius: 0 0 180px 180px;
     overflow: hidden;
+    img {
+      width: 80%;
+      height: 100%;
+    }
   }
-  .testi-img .img-box-inner img {
-    max-width: 310px;
-  }
-  .testimonial-section .carousel-inner {
-    margin-bottom: 20px;
-  }
+
   .testimonial-section .carousel-control-prev {
     margin-right: 10px;
   }

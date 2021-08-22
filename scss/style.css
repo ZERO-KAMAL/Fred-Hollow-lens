@@ -29,7 +29,7 @@ h5 {
   position: absolute;
   bottom: -1px;
   left: 0%;
-  content: '';
+  content: "";
   width: 25%;
   background-color: #dd6310;
   height: 2px;
@@ -60,7 +60,7 @@ h5 {
   position: absolute;
   bottom: -1px;
   right: 0%;
-  content: '';
+  content: "";
   width: 28%;
   background-color: #dd6310;
   height: 2px;
@@ -79,6 +79,18 @@ h5 {
   margin-bottom: 20px;
 }
 
+.nav-bg {
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: white;
+  z-index: 999;
+  padding: 6px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 body {
   font-family: Roboto, sans-serif;
   font-size: 15px;
@@ -89,6 +101,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-transition: 0.3s all ease-in-out;
   transition: 0.3s all ease-in-out;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -115,7 +131,6 @@ body {
   width: 100%;
   border-bottom: 1px solid #d2d0d0;
   text-align: center;
-  position: inherit;
   height: auto;
 }
 
@@ -476,15 +491,15 @@ body {
 }
 
 .testimonial .testi-img .img-box {
-  max-width: 360px;
+  max-width: 300px;
   margin: auto;
   text-align: center;
   position: relative;
 }
 
 .testimonial .testi-img .circle {
-  height: 360px;
-  width: 360px;
+  height: 300px;
+  width: 300px;
   background-color: #fb9c9a;
   position: absolute;
   border-radius: 50%;
@@ -501,11 +516,8 @@ body {
 }
 
 .testimonial .testi-img .img-box-inner img {
-  max-width: 310px;
-}
-
-.testimonial .testimonial-section .carousel-inner {
-  margin-bottom: 20px;
+  width: 80%;
+  height: 100%;
 }
 
 .testimonial .testimonial-section .carousel-control-prev {

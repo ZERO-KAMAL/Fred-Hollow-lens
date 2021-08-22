@@ -1,4 +1,3 @@
-
 // $(document).ready(function(){
 //     $("#close").click(function(){
 //       $("#top-bar").hide();
@@ -11,25 +10,22 @@
 //     if ($("#close").click) {
 //         $('#top-bar').show();
 //     } else {
-        
+
 //         $('#top-bar').hide();
 //     }
 // });
-function toggleHeader(){
-
-   // check if opened
-   // if open remove open from classlist and add closed
-   // else remove closed from classlist and add open
-   let topbar = document.getElementById('top-bar');
-    if(topbar.classList.contains('open')) {
-       topbar.classList.remove('open');
-       topbar.classList.add('closed');
-    } else {
-      topbar.classList.remove('closed');
-      topbar.classList.add('open');
-       
-    }
-  
+function toggleHeader() {
+  // check if opened
+  // if open remove open from classlist and add closed
+  // else remove closed from classlist and add open
+  let topbar = document.getElementById("top-bar");
+  if (topbar.classList.contains("open")) {
+    topbar.classList.remove("open");
+    topbar.classList.add("closed");
+  } else {
+    topbar.classList.remove("closed");
+    topbar.classList.add("open");
+  }
 }
 
 // if($('#top-bar').css('height') == '90px'){
@@ -47,13 +43,25 @@ function toggleHeader(){
 // }
 
 //testi
-const myCarousel = document.getElementById('myCarousel')
-myCarousel.addEventListener('slid.bs.carousel', function () {
+const myCarousel = document.getElementById("myCarousel");
+myCarousel.addEventListener("slid.bs.carousel", function () {
   const activeItem = this.querySelector(".active");
-  document.querySelector(".testi-img img").src = activeItem.getAttribute("data-img");
-  document.querySelector(".testi-img .circle").style.backgroundColor = activeItem.getAttribute("data-color");
+  document.querySelector(".testi-img img").src =
+    activeItem.getAttribute("data-img");
+  document.querySelector(".testi-img .circle").style.backgroundColor =
+    activeItem.getAttribute("data-color");
 });
-
 
 //aos
 AOS.init();
+
+//fixed navbar
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 170) {
+    $(".top-bar").hide();
+    $('.main-menu').addClass("nav-bg")
+  } else {
+    $(".top-bar").show();
+    $('.main-menu').removeClass("nav-bg")
+  }
+});
