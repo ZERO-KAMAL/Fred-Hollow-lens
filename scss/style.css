@@ -333,6 +333,15 @@ html {
   }
 }
 
+@media only screen and (min-width: 1200px) {
+  #header .main-menu .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+  }
+}
+
 .hero-bg .hero-slider .carousel-item {
   position: relative;
 }

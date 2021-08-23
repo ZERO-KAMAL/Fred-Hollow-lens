@@ -314,6 +314,14 @@ html{
       }
     }
   }
+  @media only screen and (min-width: 1200px) {
+    .main-menu{
+        .nav{
+          display: flex;
+          width: 100%;
+        }
+    }
+  }
 }
 
 //main-slider

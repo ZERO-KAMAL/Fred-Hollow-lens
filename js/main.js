@@ -53,7 +53,11 @@ myCarousel.addEventListener("slid.bs.carousel", function () {
 });
 
 //aos
-AOS.init();
+AOS.init(
+  {
+    once: true
+  }
+);
 
 //fixed navbar
 $(window).scroll(function () {
