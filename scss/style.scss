@@ -10,6 +10,7 @@ $CO: #dd6310;
 $TC: #333;
 $CB: #2f2d81;
 $SB: #fffafa;
+$TS: #6c757d;
 
 .grey-bg {
   background: #fff !important;
@@ -33,25 +34,83 @@ h5 {
   text-transform: uppercase;
 }
 
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+  background: linear-gradient(rgba(40, 58, 90, 0.9), rgba(40, 58, 90, 0.9)),
+    url("../img/banner/banner03.jpg") fixed center center;
+  background-size: cover;
+  padding: 70px 0;
+  margin-bottom: 70px;
+  color: white;
+  /* padding: 15px 0;
+background: #f3f5fa;
+min-height: 40px;
+margin-top: 72px; */
+  h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: white !important;
+  }
+  a {
+    text-decoration: none;
+    color: $CO;
+  }
+
+  @media (max-width: 992px) {
+    .breadcrumbs {
+      margin-top: 68px;
+    }
+  }
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0 0 10px 0;
+    margin: 0;
+    font-size: 14px;
+  }
+
+  ol li + li {
+    padding-left: 10px;
+  }
+
+  ol li + li::before {
+    display: inline-block;
+    padding-right: 10px;
+    color: #4668a2;
+    content: "/";
+  }
+}
+
 //title-left
 .title-left {
-  font-size: 24px;
-  font-weight: 600;
   margin-bottom: 50px;
   border-bottom: 1px solid $BC;
   width: 100%;
   color: $CB;
   text-transform: uppercase;
-  position: relative;
-  &::after {
-    position: absolute;
-    bottom: -1px;
-    left: 0%;
-    content: "";
-    width: 25%;
-    background-color: $CO;
-    height: 2px;
+  display: flex;
+  justify-content: center;
+  h4 {
+    position: relative;
+    width: fit-content;
+    font-size: 24px;
+    font-weight: 600;
+
+    &::after {
+      position: absolute;
+      bottom: -9px;
+      left: 0%;
+      content: "";
+      width: 100%;
+      margin: auto;
+      background-color: $CO;
+      height: 2px;
+    }
   }
+
   @media screen and (max-width: 991px) {
     text-align: center;
     &::after {
@@ -60,23 +119,28 @@ h5 {
   }
 }
 .title-right {
-  font-size: 24px;
-  font-weight: 600;
   margin-bottom: 50px;
   border-bottom: 1px solid $BC;
-  width: 100%;
+  max-width: 100%;
   color: $CB;
-  text-align: right;
   text-transform: uppercase;
-  position: relative;
-  &::after {
-    position: absolute;
-    bottom: -1px;
-    right: 0%;
-    content: "";
-    width: 28%;
-    background-color: $CO;
-    height: 2px;
+  display: flex;
+  justify-content: center;
+  h4 {
+    position: relative;
+    width: fit-content;
+    font-size: 24px;
+    font-weight: 600;
+    &::after {
+      position: absolute;
+      bottom: -9px;
+      right: 0%;
+      content: "";
+      width: 100%;
+      margin: auto;
+      background-color: $CO;
+      height: 2px;
+    }
   }
   @media screen and (max-width: 991px) {
     text-align: center;
@@ -115,7 +179,7 @@ body {
   transition: 0.3s all ease-in-out;
 }
 //html
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -264,6 +328,53 @@ html{
       background-color: $CO;
       color: white;
     }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      transition: 0.3s ease-in-out;
+      border-radius: 3px;
+
+      &:hover {
+        .dropdown-menu {
+          display: block;
+          transition-delay: 1s;
+        }
+      }
+      .dropdown-menu {
+        display: none;
+        @include marpad();
+        li {
+          margin: 0%;
+          padding: 2px 0;
+          a {
+            display: block;
+          }
+        }
+      }
+      .dropdown-submenu {
+        position: relative;
+        .dropdown-menu {
+          left: 100%;
+          /* -6px gives dropdown-menu's padding+border */
+          top: 0px;
+          display: none;
+          // li{
+          //   a{
+          //     text-decoration: none;
+          //     color: $TC;
+          //     font-size: 14px;
+          //     position: relative;
+          //     font-weight: 500;
+          //   }
+          // }
+        }
+        &:hover {
+          .dropdown-menu {
+            display: block;
+          }
+        }
+      }
+    }
   }
 
   #close {
@@ -315,11 +426,10 @@ html{
     }
   }
   @media only screen and (min-width: 1200px) {
-    .main-menu{
-        .nav{
-          display: flex;
-          width: 100%;
-        }
+    .main-menu {
+      .nav {
+        display: flex;
+      }
     }
   }
 }
@@ -384,7 +494,16 @@ html{
 }
 //about-hollows
 .about-hollows {
-  margin: 80px 0;
+  margin: 0 0 80px;
+  .title-about {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $CO;
+    width: 100%;
+    color: $CB;
+    text-transform: uppercase;
+  }
 
   img {
     width: 100%;
@@ -395,14 +514,18 @@ html{
     color: $CB;
     font-weight: 600;
     margin-bottom: 12px;
+    font-family: Raleway, sans-serif;
+    text-transform: uppercase;
   }
   ul {
     list-style: none;
+    @include marpad();
     li {
       margin-top: 5px;
       a {
         text-decoration: none;
         color: $CB;
+        font-size: 14px;
         &:hover {
           border-bottom: 1px solid $CO;
         }
@@ -431,7 +554,7 @@ html{
     padding: 30px;
     border-radius: 5px;
     background: #fff;
-    transition: 0.5s;
+    transition: 0.5s ease-in-out;
     &:hover {
       transform: translateY(-10px);
       span {
@@ -550,6 +673,165 @@ html{
     }
   }
 }
+//productMain
+.productMain {
+  .product-category {
+    h6 {
+      font-size: 1.3rem;
+      color: $CB;
+      font-weight: 600;
+      padding: 10px;
+      text-align: center;
+      border: 1px dashed $BC;
+      span {
+        color: $CO;
+      }
+    }
+    .material-icons {
+      color: $CO;
+    }
+    ul {
+      margin-top: 15px !important;
+      @include marpad();
+      li {
+        margin-top: 8px;
+        a {
+          text-decoration: none !important;
+          color: $CB;
+        }
+      }
+    }
+    .sub-category {
+      list-style: none;
+      margin-top: 10px !important;
+      li {
+        a {
+          color: $TS;
+          border-bottom: 1px dashed transparent;
+          &:hover {
+            border-bottom: 1px dashed $CO;
+          }
+        }
+      }
+    }
+    .material-icons {
+      font-size: 14px;
+    }
+    .dropdown {
+      .btn {
+        border-radius: 3px;
+        border: 1px dashed $CB !important;
+        box-shadow: none !important;
+        ul {
+          @include marpad();
+        }
+      }
+    }
+  }
+  .two-btn {
+    a {
+      text-decoration: none !important;
+      padding: 4px 8px;
+      color: white;
+      border-radius: 3px;
+      font-size: 14px;
+    }
+    .active-category {
+      background-color: #007bff;
+    }
+    .clearAll {
+      background-color: #bd2130;
+    }
+  }
+  .page {
+    background-color: #dfe6e0;
+    padding: 2%;
+    margin: auto;
+    .fa {
+      color: #f2dd1d;
+    }
+
+    .card-img-top {
+      width: 90%;
+      height: 225px;
+    }
+
+    .view {
+      background-color: #dfe6e0;
+      padding: 10px;
+      margin: 20px;
+    }
+
+    .card {
+      width: 95%;
+      padding: 0px;
+      margin-left: 2%;
+    }
+
+    .card-footer {
+      background-color: #ff772e;
+      font-weight: 700;
+    }
+
+    .price {
+      color: #ff4517;
+      font-weight: 600;
+    }
+  }
+  .card {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px !important;
+    border: none;
+    border-radius: 3px !important;
+    transition: 0.3s ease-in-out;
+    overflow: hidden;
+    position: relative;
+    width: 100% !important;
+    span{
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      background-color: $CO;
+      right: 15px;
+      top: 8px;
+      color: white;
+      font-weight: 300;
+    }
+    
+    &:hover {
+      transform: translateY(-10px);
+      // img {
+      //   transform: scale(1.1);        
+      // }
+    }
+    .card-body {
+      h5 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: $CB;
+      }
+      a {
+        text-align: center;
+        width: 100%;
+        background-color: $CB;
+        font-weight: 300;
+      }
+    }
+  }
+  @media screen and (max-width: 572px) {
+    .card {
+      width: 100% !important;
+      .img {
+        height: 200px !important;
+      }
+    }
+    .two-btn {
+      margin-top: 10x;
+    }
+  }
+}
 
 //NewsAndEvents
 .newsAndletter {
@@ -576,21 +858,22 @@ html{
       position: relative;
       background: black;
       overflow: hidden;
+      transition: all 0.3s ease-in-out !important;
       .date {
         position: absolute;
-        top: 20px;
-        right: 20px;
+        top: 15px;
+        right: 10px;
         z-index: 1;
         background: $CO;
-        width: 55px;
-        height: 55px;
+        width: 50px;
+        height: 50px;
         padding: 6px 0;
         border-radius: 100%;
         color: white;
         font-weight: 700;
         text-align: center;
         .day {
-          font-size: 18px;
+          font-size: 1rem;
         }
         .month {
           font-size: 12px;
@@ -610,10 +893,10 @@ html{
       padding: 10px;
       .category {
         position: absolute;
-        top: -40px;
+        top: -36px;
         left: 0;
         background: $CO;
-        padding: 10px 15px;
+        padding: 8px 15px;
         color: white;
         font-size: 14px;
         font-weight: 600;
@@ -648,6 +931,174 @@ html{
     }
   }
 }
+
+//contact
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact{
+  
+    ul{
+      @include marpad();
+      list-style: none;
+      li{
+           h6{
+             color: $CB;
+             font-size: 1rem;
+           }
+           a{
+             text-decoration: none;
+             font-size: 14px;
+             display: inline-block;
+             border-bottom: 1px solid transparent;
+             &:hover{
+              border-bottom: 1px solid $CO;
+             }
+           }
+           span{
+             font-size: 14px;
+           }
+      }
+
+  }
+}
+.google-map{
+  margin: 80px 0;
+  .responsive-map{
+    overflow: hidden;
+    padding-bottom:35.25%;
+    position:relative;
+    height:0;
+    }
+    .responsive-map iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+    }
+}
+@media only screen and (max-width: 768px) {
+  .google-map{
+    .responsive-map{
+      height: 300px;
+    }
+  }
+}
+.contact-section{
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  overflow: hidden;
+  h3{
+    font-weight: 600;
+    color: $CO;
+  }
+  img{
+    margin: auto;
+  }
+}
+
+
+.php-email-form {
+  background-color: $CB;
+  width: 100%;
+  border: 3px solid $CB;
+  border-bottom: 3px solid $CB;
+  padding: 20px;
+  label{
+    color: white;
+    font-size: 14px;
+  }
+ 
+}
+
+.php-email-form .form-group {
+  padding-bottom: 8px;
+}
+ .php-email-form .validate {
+  display: none;
+  color: red;
+  margin: 0 0 15px 0;
+  font-weight: 400;
+  font-size: 13px;
+
+}
+
+ .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+ .php-email-form .error-message br + br {
+  margin-top: 25px;
+}
+ .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+.php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+ .php-email-form .form-group {
+  margin-bottom: 20px;
+}
+
+ .php-email-form label {
+  padding-bottom: 8px;
+}
+
+ .php-email-form input, .php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  border-radius: 4px;
+}
+.php-email-form input:focus, .php-email-form textarea:focus {
+  border-color: $CB;
+}
+
+
+ .php-email-form textarea {
+  padding: 8px 12px;
+}
+
+.php-email-form button[type="submit"] {
+ background-color: $CO;
+  border: 0;
+  padding: 12px 34px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.contact .php-email-form button[type="submit"]:hover {
+  background: $CB;
+}
+
 
 //footer top-strip
 .top-strip {
