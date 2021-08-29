@@ -517,7 +517,7 @@ html {
 }
 
 .about-hollows {
-  margin: 0 0 80px;
+  margin: 80px 0;
 }
 
 .about-hollows .title-about {
@@ -858,22 +858,7 @@ html {
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   overflow: hidden;
-  position: relative;
   width: 100% !important;
-}
-
-.productMain .card span {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 50%;
-  background-color: #dd6310;
-  right: 15px;
-  top: 8px;
-  color: white;
-  font-weight: 300;
 }
 
 .productMain .card:hover {
@@ -890,8 +875,10 @@ html {
 .productMain .card .card-body a {
   text-align: center;
   width: 100%;
-  background-color: #2f2d81;
-  font-weight: 300;
+  background-color: #A1C4BC;
+  font-weight: 500;
+  border: none;
+  color: #2f2d81;
 }
 
 @media screen and (max-width: 572px) {

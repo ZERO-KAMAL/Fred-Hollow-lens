@@ -11,6 +11,7 @@ $TC: #333;
 $CB: #2f2d81;
 $SB: #fffafa;
 $TS: #6c757d;
+$LC:#A1C4BC;
 
 .grey-bg {
   background: #fff !important;
@@ -494,7 +495,7 @@ html {
 }
 //about-hollows
 .about-hollows {
-  margin: 0 0 80px;
+  margin: 80px 0;
   .title-about {
     font-size: 24px;
     font-weight: 600;
@@ -784,21 +785,8 @@ html {
     border-radius: 3px !important;
     transition: 0.3s ease-in-out;
     overflow: hidden;
-    position: relative;
     width: 100% !important;
-    span{
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      text-align: center;
-      line-height: 40px;
-      border-radius: 50%;
-      background-color: $CO;
-      right: 15px;
-      top: 8px;
-      color: white;
-      font-weight: 300;
-    }
+    
     
     &:hover {
       transform: translateY(-10px);
@@ -815,8 +803,10 @@ html {
       a {
         text-align: center;
         width: 100%;
-        background-color: $CB;
-        font-weight: 300;
+        background-color: $LC;
+        font-weight: 500;
+        border: none;
+        color: $CB;
       }
     }
   }
