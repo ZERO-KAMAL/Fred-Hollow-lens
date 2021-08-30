@@ -516,10 +516,6 @@ html {
   width: 5px;
 }
 
-.about-hollows {
-  margin: 80px 0;
-}
-
 .about-hollows .title-about {
   font-size: 24px;
   font-weight: 600;
@@ -1076,10 +1072,8 @@ html {
 }
 
 .php-email-form {
-  background-color: #2f2d81;
+  background-color: #dd6310;
   width: 100%;
-  border: 3px solid #2f2d81;
-  border-bottom: 3px solid #2f2d81;
   padding: 20px;
 }
 
@@ -1167,7 +1161,7 @@ html {
 }
 
 .php-email-form button[type="submit"] {
-  background-color: #dd6310;
+  background-color: #2f2d81;
   border: 0;
   padding: 12px 34px;
   color: #fff;
