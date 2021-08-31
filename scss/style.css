@@ -2126,4 +2126,29 @@ html {
   font-size: 60px;
   color: #dd6310;
 }
+
+.download {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.download a {
+  text-decoration: none;
+  background-color: #fafafa !important;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+.download a i {
+  margin-right: 5px;
+  color: #dd6310;
+}
+
+.download .row div {
+  padding: 10px;
+}
+
+.download .row div:hover {
+  background-color: #a1c4bc;
+}
 /*# sourceMappingURL=style.css.map */
