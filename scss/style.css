@@ -1193,6 +1193,7 @@ html {
 }
 
 .contact-section {
+  margin-top: 80px;
   background: #fff;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
@@ -1209,13 +1210,12 @@ html {
 }
 
 .php-email-form {
-  background-color: #dd6310 !important;
   width: 100%;
   padding: 20px;
 }
 
 .php-email-form label {
-  color: white;
+  color: #2f2d81;
   font-size: 14px;
 }
 
