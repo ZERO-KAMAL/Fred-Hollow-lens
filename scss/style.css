@@ -2151,4 +2151,13 @@ html {
 .download .row div:hover {
   background-color: #a1c4bc;
 }
+
+.qualityassurance .quality-img img {
+  width: 15%;
+  height: 15%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 /*# sourceMappingURL=style.css.map */
