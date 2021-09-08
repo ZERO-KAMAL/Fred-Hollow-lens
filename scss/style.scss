@@ -42,7 +42,7 @@ h5 {
   background: linear-gradient(rgba(40, 58, 90, 0.9), rgba(40, 58, 90, 0.9)),
     url("../img/banner/banner03.jpg") fixed center center;
   background-size: cover;
-  padding: 70px 0;
+  padding: 45px 0;
   margin-bottom: 70px;
   color: white;
   /* padding: 15px 0;
@@ -318,7 +318,10 @@ html {
       border: 1px solid $CO;
       box-shadow: none !important;
       font-size: 14px;
-      border-radius: 4px !important;
+      // border-radius: 4px !important;
+      border-radius: 3px 0px 0px 3px;
+      border-right: none ;
+      
     }
     .btn {
       padding: 0.3rem 0.75rem !important;
@@ -381,6 +384,19 @@ html {
   #close {
     display: block;
     line-height: 20px;
+  }
+  .btn-search{
+    cursor: pointer;
+   border: 1px solid $CO;
+    // border-radius: 3px;
+    border-radius: 0px 3px 3px 0px;
+   border-left: none;
+   background: none;
+   font-size: 20px;
+   border-left: none;
+   i{
+     color: $CB;
+   }
   }
 
   @media screen and (min-width: 991px) {
@@ -1413,6 +1429,75 @@ html {
             color: #111;
             background: #fff;
           }
+        }
+      }
+    }
+
+
+    #subScribe {
+      .wrapper {
+        .top {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          &::before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            bottom: -10px;
+            transform: rotate(45deg);
+          }
+          i {
+            font-size: 50px;
+            color: #fff;
+          }
+        }
+        .bottom {
+          padding: 0px;
+          word-spacing: -1px;
+          .info {
+            color: $SC;
+            font-weight: 400;
+            font-size: 14px;
+            text-align: center;
+          }
+          .input-box {
+            height: 45px;
+            margin: 15px 0 10px 0;
+            input {
+              height: 100%;
+              width: 100%;
+              padding-left: 14px;
+              outline: none;
+              font-size: 14px;
+              border-radius: 25px;
+              transition: all 0.4s ease;
+            }
+          }
+          input[type="text"] {
+            border: 2px solid #fff;
+          }
+          input[type="text"]:focus,
+          input[type="text"]:valid {
+            border-color: $CO;
+          }
+          input[type="submit"] {
+            border: none;
+            cursor: pointer;
+            background: $CO;
+            color: #fff;
+            letter-spacing: 1px;
+          }
+          input[type="submit"]:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+      @media screen and (max-width: 480px) {
+        .wrapper {
+          width: 100%;
         }
       }
     }
