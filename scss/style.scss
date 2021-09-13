@@ -177,7 +177,7 @@ body {
   line-height: 1.42857143;
   -webkit-overflow-scrolling: touch;
   -webkit-font-smoothing: antialiased;
-  transition: 0.3s all ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 //html
 html {
@@ -313,25 +313,29 @@ html {
         }
       }
     }
-    .form-control {
-      padding: 0.3rem 0.75rem !important;
-      border: 1px solid $CO;
-      box-shadow: none !important;
-      font-size: 14px;
-      // border-radius: 4px !important;
-      border-radius: 3px 0px 0px 3px;
-      border-right: none ;
-      
+
+    .search-btn{
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      width: 100%;
+      z-index: 1;
+      .input-group{
+        .input-group-prepend{
+          i{
+            color: $CO;
+          }
+          button{
+            box-shadow: none;
+          }
+        }
+        input{
+          outline: none !important;
+          box-shadow: none !important;
+          border-radius: 25px !important;
+          
+        }
+      }
     }
-    .btn {
-      padding: 0.3rem 0.75rem !important;
-      border: 1px solid $CO;
-      box-shadow: none !important;
-      font-size: 14px;
-      border-radius: 4px !important;
-      background-color: $CO;
-      color: white;
-    }
+    
     .dropdown {
       position: relative;
       display: inline-block;
@@ -385,19 +389,35 @@ html {
     display: block;
     line-height: 20px;
   }
-  .btn-search{
-    cursor: pointer;
-   border: 1px solid $CO;
-    // border-radius: 3px;
-    border-radius: 0px 3px 3px 0px;
-   border-left: none;
-   background: none;
-   font-size: 20px;
-   border-left: none;
-   i{
-     color: $CB;
-   }
-  }
+  // .btn-search{
+  //   cursor: pointer;
+  //  border: 1px solid $CO;
+  //   // border-radius: 3px;
+  //   border-radius: 0px 3px 3px 0px;
+  //  border-left: none;
+  //  background: none;
+  //  font-size: 20px;
+  //  border-left: none;
+  //  i{
+  //    color: $BC;
+  //  }
+  // }
+
+  .has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
 
   @media screen and (min-width: 991px) {
     #topbar-toggler {
@@ -456,7 +476,7 @@ html {
   .hero-slider {
     .carousel-item {
       width: 100%;
-      height: 45vh;
+      height: 75vh;
       // position: relative;
       // .overlay {
       //   position: absolute;
@@ -913,10 +933,17 @@ html {
       a {
         text-align: center;
         width: 100%;
-        background-color: $LC;
+        background-color: $SB;
         font-weight: 500;
         border: none;
         color: $CB;
+        border: 1px solid $CO;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+          color: white;
+          border: 1px solid $CB;
+          background-color: $CB;
+        }
       }
     }
   }
@@ -944,7 +971,6 @@ html {
     background: white;
     min-width: 100%;
     height: 100%;
-
     &:hover {
       cursor: pointer;
       .thumbnail {
@@ -958,7 +984,6 @@ html {
       position: relative;
       background: black;
       overflow: hidden;
-      transition: all 0.3s ease-in-out !important;
       .date {
         position: absolute;
         top: 15px;
@@ -981,9 +1006,9 @@ html {
         }
       }
       img {
-        display: block;
         width: 100%;
         height: 180px;
+        transition: all 0.3s ease-in-out;
       }
     }
     .post-content {
@@ -1800,7 +1825,7 @@ html {
         }
       }
       img {
-        display: block;
+        transition:  all 0.3s ease-in-out;
         width: 100%;
         height: 180px;
       }
