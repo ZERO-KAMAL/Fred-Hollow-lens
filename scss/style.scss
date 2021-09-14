@@ -8,10 +8,11 @@ $BC: #d2d0d0;
 $IC: #666;
 $CO: #dd6310;
 $TC: #333;
-$CB: #2f2d81;
+$CB: #a1c4bc;
 $SB: #fffafa;
 $TS: #6c757d;
 $LC: #a1c4bc;
+$Black:rgba(0,0,0,0.9);
 
 .grey-bg {
   background: #fff !important;
@@ -568,7 +569,7 @@ html {
   }
   p {
     font-size: 14px;
-    text-align: start;
+    text-align: justify;
     font-weight: 400;
     line-height: 1.8em;
   }
@@ -829,7 +830,9 @@ html {
         margin-top: 8px;
         a {
           text-decoration: none !important;
-          color: $CB;
+          color: $Black;
+          padding: 6px;
+          background: $SB;
         }
       }
     }
@@ -839,10 +842,10 @@ html {
       li {
         a {
           color: $TS;
-          border-bottom: 1px dashed transparent;
-          &:hover {
-            border-bottom: 1px dashed $CO;
-          }
+          // border-bottom: 1px dashed transparent;
+          // &:hover {
+          //   border-bottom: 1px dashed $CO;
+          // }
         }
       }
     }
@@ -928,7 +931,7 @@ html {
       h5 {
         font-size: 1rem;
         font-weight: 600;
-        color: $CB;
+        color: $Black;
       }
       a {
         text-align: center;
@@ -936,7 +939,7 @@ html {
         background-color: $SB;
         font-weight: 500;
         border: none;
-        color: $CB;
+        color: $CO;
         border: 1px solid $CO;
         transition: all 0.3s ease-in-out;
         &:hover{
@@ -979,6 +982,18 @@ html {
           opacity: 0.6;
         }
       }
+    }
+    .category {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background: $CO;
+      padding: 5px 7px;
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
     }
     .thumbnail {
       position: relative;
@@ -1030,7 +1045,7 @@ html {
       .title {
         margin: 0;
         padding: 0 0 10px;
-        color: $CB;
+        color: $Black;
         font-size: 18px;
         font-weight: 700;
       }
@@ -1040,6 +1055,7 @@ html {
         color: $CB;
         font-size: 16px;
         font-weight: 500;
+        display: none;
       }
       .description {
         color: #777;
@@ -1590,7 +1606,7 @@ html {
     text-transform: capitalize;
     font-weight: 700;
     position: relative;
-    color: $CB;
+    color: $Black;
     margin: 1rem 0;
     width: fit-content;
   }
@@ -1633,7 +1649,7 @@ html {
       justify-content: center;
       width: 20px;
       height: 20px;
-      background-color: $CB;
+      background-color: #666;
       border-radius: 50%;
       i {
         align-items: center;
@@ -1691,8 +1707,8 @@ html {
     justify-content: center;
     width: 32px;
     height: 32px;
-    color: $CB;
-    border: 1px solid $CB;
+    color: #666;
+    border: 1px solid $BC;
     margin: 0 0.2rem;
     border-radius: 50%;
     text-decoration: none;
@@ -1700,9 +1716,7 @@ html {
     transition: all 0.5s ease;
   }
   .social-links a:hover {
-    background: $CB;
-    border-color: transparent;
-    color: #fff;
+    color: $CO;
   }
 
   @media screen and (min-width: 992px) {
@@ -1756,13 +1770,16 @@ html {
       @include marpad();
       li {
         margin-top: 8px;
+        list-style: none;
         a {
           text-decoration: none !important;
-          color: $CB;
-          border-bottom: 1px dashed transparent;
-          &:hover {
-            border-bottom: 1px dashed $CO;
-          }
+          color: $Black;
+          padding: 6px;
+          background: $SB;
+          // border-bottom: 1px dashed transparent;
+          // &:hover {
+          //   border-bottom: 1px dashed $CO;
+          // }
         }
       }
     }
@@ -1788,6 +1805,8 @@ html {
     background: white;
     min-width: 100%;
     height: 100%;
+    border-radius: 3px;
+    overflow: hidden;
 
     &:hover {
       cursor: pointer;
@@ -1797,6 +1816,18 @@ html {
           opacity: 0.6;
         }
       }
+    }
+    .category {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background: $CO;
+      padding: 5px 7px;
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
     }
     .thumbnail {
       position: relative;
@@ -1828,6 +1859,7 @@ html {
         transition:  all 0.3s ease-in-out;
         width: 100%;
         height: 180px;
+        object-fit: cover;
       }
     }
     .post-content {
@@ -1835,23 +1867,14 @@ html {
       bottom: 0;
       background: white;
       padding: 10px;
-      .category {
-        position: absolute;
-        top: -36px;
-        left: 0;
-        background: $CO;
-        padding: 8px 15px;
-        color: white;
-        font-size: 14px;
-        font-weight: 600;
-        text-transform: uppercase;
-      }
+     
       .title {
         margin: 0;
         padding: 0 0 10px;
-        color: $CB;
+        color: $Black;
         font-size: 18px;
         font-weight: 700;
+        text-transform: capitalize;
       }
       .sub_title {
         margin: 0;
@@ -1859,6 +1882,7 @@ html {
         color: $CB;
         font-size: 16px;
         font-weight: 500;
+        display: none;
       }
       .description {
         color: #777;
@@ -1878,7 +1902,7 @@ html {
 .publicationDetails {
   margin: 80px 0;
   h4 {
-    color: $CB;
+    color: $Black;
     font-weight: 500;
   }
   .card-block {
